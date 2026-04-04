@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preston Solar PV Install | TMR Electrical Services</title>
+  <meta name="description" content="Large-scale solar PV installation in Preston — TMR Electrical Services Ltd, NICEIC approved contractors based in Stroud, Gloucestershire.">
+  <link rel="canonical" href="https://www.tmres.co.uk/preston-pv">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #1a3a8b; --blue-dark: #122a6a; --red: #c41230;
+      --text: #1a1a2e; --mid-grey: #6b7280; --light-grey: #f3f4f6;
+      --border: #e5e7eb; --white: #ffffff;
+      --radius: 10px; --transition: 0.2s ease;
+    }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .site-header { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 24px; }
+    .logo-wrap { display: flex; align-items: center; gap: 14px; flex-shrink: 0; text-decoration: none; color: inherit; cursor: pointer; }
+    .logo-img { width: 60px; height: 60px; border-radius: 6px; object-fit: contain; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .logo-text .name { font-size: 1.05rem; font-weight: 800; color: var(--blue); letter-spacing: 0.01em; }
+    .logo-text .sub { font-size: 0.68rem; font-weight: 600; color: var(--mid-grey); letter-spacing: 0.05em; text-transform: uppercase; }
+    .header-nav { display: flex; align-items: center; gap: 4px; }
+    .header-nav a { padding: 8px 14px; border-radius: 6px; font-size: 0.9rem; font-weight: 500; color: var(--text); transition: all var(--transition); }
+    .header-nav a:hover { background: var(--light-grey); color: var(--blue); }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 22px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; transition: all var(--transition); cursor: pointer; border: none; }
+    .btn-primary { background: var(--blue); color: var(--white); }
+    .btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
+    .breadcrumb { padding: 16px 0; font-size: 0.85rem; color: var(--mid-grey); }
+    .breadcrumb a { color: var(--blue); }
+    .breadcrumb span { margin: 0 8px; }
+    .project-hero { background: var(--blue); color: var(--white); padding: 64px 0 56px; }
+    .project-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 14px; }
+    .project-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 16px; }
+    .project-meta { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 24px; }
+    .meta-item { font-size: 0.88rem; color: rgba(255,255,255,0.75); }
+    .meta-item strong { color: var(--white); display: block; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 2px; }
+    .project-gallery { padding: 64px 0; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 40px; }
+    .gallery-img { border-radius: var(--radius); overflow: hidden; aspect-ratio: 4/3; background: var(--light-grey); }
+    .gallery-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+    .gallery-img:hover img { transform: scale(1.04); }
+    .gallery-img.wide { grid-column: span 2; aspect-ratio: 16/7; }
+    .project-description { padding: 0 0 64px; }
+    .desc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .desc-grid h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 16px; color: var(--blue); }
+    .desc-grid p { color: var(--mid-grey); line-height: 1.75; margin-bottom: 14px; }
+    .detail-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
+    .detail-list li { display: flex; gap: 12px; font-size: 0.92rem; }
+    .detail-list li strong { color: var(--text); min-width: 120px; }
+    .detail-list li span { color: var(--mid-grey); }
+    .project-cta { background: var(--light-grey); padding: 64px 0; text-align: center; }
+    .project-cta h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 12px; }
+    .project-cta p { color: var(--mid-grey); margin-bottom: 28px; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    footer { background: #0f1f50; color: rgba(255,255,255,0.7); padding: 40px 0; text-align: center; font-size: 0.85rem; }
+    footer a { color: rgba(255,255,255,0.9); }
+    @media (max-width: 768px) {
+      .header-nav { display: none; }
+      .desc-grid { grid-template-columns: 1fr; gap: 32px; }
+      .gallery-img.wide { grid-column: span 1; aspect-ratio: 4/3; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo-wrap" aria-label="TMR Electrical Services — home">
+        <img src="http://tmres.co.uk/wp-content/uploads/2018/07/cropped-TMR-LOGO.jpg" alt="TMR Electrical Services" class="logo-img">
+        <div class="logo-text">
+          <span class="name">TMR Electrical</span>
+          <span class="sub">Services Ltd</span>
+        </div>
+      </a>
+      <nav class="header-nav">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#apprenticeship">Careers</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <a href="index.html#contact" class="btn btn-primary">Get a Quote</a>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="breadcrumb">
+    <a href="index.html">Home</a><span>›</span>
+    <a href="index.html#projects">Projects</a><span>›</span>
+    Preston Solar PV Install
+  </div>
+</div>
+
+<section class="project-hero">
+  <div class="container">
+    <div class="project-label">Solar PV Installation</div>
+    <h1 class="project-title">Preston PV Install</h1>
+    <div class="project-meta">
+      <div class="meta-item"><strong>Sector</strong>Solar PV</div>
+      <div class="meta-item"><strong>Location</strong>Preston</div>
+      <div class="meta-item"><strong>Type</strong>Large-Scale Solar PV Installation</div>
+    </div>
+  </div>
+</section>
+
+<section class="project-gallery">
+  <div class="container">
+    <div class="gallery-grid">
+      <div class="gallery-img wide">
+        <img src="http://tmres.co.uk/wp-content/uploads/2015/11/IMG_1387-e1463498330232.jpg" alt="Preston solar PV installation — TMR Electrical" loading="lazy">
+      </div>
+      <div class="gallery-img">
+        <img src="http://pearce-platford.co.uk/wp-content/uploads/2015/11/IMG_1380-e1463498300711.jpg" alt="Preston PV install — panel array" loading="lazy">
+      </div>
+      <div class="gallery-img">
+        <img src="http://pearce-platford.co.uk/wp-content/uploads/2015/11/IMG_1385-e1463498315171.jpg" alt="Preston PV install — installation detail" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="project-description">
+  <div class="container">
+    <div class="desc-grid">
+      <div>
+        <h2>Project Overview</h2>
+        <p>TMR Electrical Services completed a large-scale solar PV installation in Preston, demonstrating the company's nationwide reach and capability to deliver complex renewable energy projects.</p>
+        <p>Solar PV installations are one of TMR's key specialisms. The team handles everything from initial design and planning through to installation, commissioning and ongoing maintenance contracts.</p>
+      </div>
+      <div>
+        <h2>Project Details</h2>
+        <ul class="detail-list">
+          <li><strong>Location</strong><span>Preston</span></li>
+          <li><strong>Sector</strong><span>Solar PV Installation</span></li>
+          <li><strong>Scope</strong><span>Large-scale PV array installation</span></li>
+          <li><strong>Contractor</strong><span>TMR Electrical Services Ltd</span></li>
+          <li><strong>Accreditation</strong><span>NICEIC Approved</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="project-cta">
+  <div class="container">
+    <h2>Interested in Solar PV?</h2>
+    <p>We offer full solar PV installation and ongoing maintenance contracts. Get in touch to discuss your requirements.</p>
+    <div class="cta-btns">
+      <a href="index.html#contact" class="btn btn-primary">Request an Estimate</a>
+      <a href="index.html#projects" class="btn" style="background:#e5e7eb;color:#1a1a2e;">View all projects</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>TMR Electrical Services Ltd &nbsp;|&nbsp; Unit 3 Merretts Mill, Woodchester, Stroud GL5 5EX &nbsp;|&nbsp; <a href="tel:01453835100">01453 835100</a> &nbsp;|&nbsp; <a href="mailto:mail@tmres.co.uk">mail@tmres.co.uk</a></p>
+    <p style="margin-top:8px;">Company Reg: 09273852 &nbsp;|&nbsp; VAT: 255464002 &nbsp;|&nbsp; NICEIC Approved Contractor</p>
+  </div>
+</footer>
+
+</body>
+</html>
