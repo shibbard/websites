@@ -1,10 +1,15 @@
 // JAX Electrical Services - main.js
-// Lucide icons via CDN
-import { createIcons, icons } from 'https://unpkg.com/lucide@latest/dist/esm/lucide.js';
+// Lucide is loaded via CDN script tag in each HTML file
 
 document.addEventListener('DOMContentLoaded', () => {
+
   // ── Lucide Icons ─────────────────────────────
-  createIcons({ icons });
+  if (window.lucide) {
+    lucide.createIcons();
+  }
+
+  // ── Enable JS-powered scroll reveal ──────────
+  document.body.classList.add('js-ready');
 
   // ── Mobile Nav Toggle ─────────────────────────
   const hamburger = document.getElementById('nav-hamburger');
@@ -12,32 +17,25 @@ document.addEventListener('DOMContentLoaded', () => {
   if (hamburger && mobileMenu) {
     hamburger.addEventListener('click', () => {
       mobileMenu.classList.toggle('open');
-      const isOpen = mobileMenu.classList.contains('open');
-      hamburger.setAttribute('aria-expanded', isOpen);
+      hamburger.setAttribute('aria-expanded', mobileMenu.classList.contains('open'));
     });
   }
 
-  // ── Mobile Dropdown ───────────────────────────
+  // ── Mobile Our Work sub-toggle ────────────────
   const mobileDropdownToggle = document.getElementById('mobile-our-work-toggle');
   const mobileDropdown = document.getElementById('mobile-our-work');
   if (mobileDropdownToggle && mobileDropdown) {
-    mobileDropdownToggle.addEventListener('click', () => {
-      mobileDropdown.classList.toggle('open');
-      mobileDropdown.style.display = mobileDropdown.classList.contains('open') ? 'block' : 'none';
-    });
     mobileDropdown.style.display = 'none';
+    mobileDropdownToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const open = mobileDropdown.style.display !== 'none';
+      mobileDropdown.style.display = open ? 'none' : 'block';
+    });
   }
-
-  // ── Active Nav Link ───────────────────────────
-  const currentPath = window.location.pathname.replace(/\/$/, '').split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    const href = link.getAttribute('href').split('/').pop() || 'index.html';
-    if (href === currentPath) link.classList.add('active');
-  });
 
   // ── Scroll Reveal ─────────────────────────────
   const reveals = document.querySelectorAll('.reveal');
-  if (reveals.length) {
+  if (reveals.length && 'IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -45,8 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
           io.unobserve(e.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
     reveals.forEach(el => io.observe(el));
+  } else {
+    // Fallback: make all visible immediately
+    reveals.forEach(el => el.classList.add('visible'));
   }
 
   // ── Gallery Lightbox ──────────────────────────
@@ -69,33 +70,29 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.style.overflow = '';
       lightboxImg.src = '';
     };
-    lightboxClose?.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', e => {
-      if (e.target === lightbox) closeLightbox();
-    });
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeLightbox();
-    });
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
   }
 
   // ── Slideshow (Our Work pages) ────────────────
   const slideshow = document.getElementById('slideshow');
   if (slideshow) {
     const images = JSON.parse(slideshow.dataset.images || '[]');
-    if (images.length > 1) {
-      let idx = 0;
+    if (images.length > 0) {
       slideshow.style.backgroundImage = `url('${images[0]}')`;
-      setInterval(() => {
-        slideshow.style.opacity = '0';
-        setTimeout(() => {
-          idx = (idx + 1) % images.length;
-          slideshow.style.backgroundImage = `url('${images[idx]}')`;
-          slideshow.style.opacity = '1';
-        }, 400);
-      }, 4000);
       slideshow.style.transition = 'opacity 0.4s ease';
-    } else if (images.length === 1) {
-      slideshow.style.backgroundImage = `url('${images[0]}')`;
+      if (images.length > 1) {
+        let idx = 0;
+        setInterval(() => {
+          slideshow.style.opacity = '0';
+          setTimeout(() => {
+            idx = (idx + 1) % images.length;
+            slideshow.style.backgroundImage = `url('${images[idx]}')`;
+            slideshow.style.opacity = '1';
+          }, 400);
+        }, 4000);
+      }
     }
   }
 
@@ -105,14 +102,16 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', e => {
       e.preventDefault();
       const btn = form.querySelector('[type="submit"]');
+      const orig = btn.innerHTML;
       btn.textContent = 'Message Sent!';
       btn.disabled = true;
       btn.style.background = '#16a34a';
       setTimeout(() => {
-        btn.textContent = 'Send Enquiry';
+        btn.innerHTML = orig;
         btn.disabled = false;
         btn.style.background = '';
         form.reset();
+        if (window.lucide) lucide.createIcons();
       }, 4000);
     });
   }
