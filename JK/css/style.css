@@ -1147,7 +1147,7 @@ footer {
    PAGE HERO (inner pages)
    ============================================================ */
 .page-hero {
-  background: var(--green-dark);
+  background: var(--primary);
   padding: 7rem 0 4rem;
   text-align: center;
   position: relative;
@@ -1158,8 +1158,8 @@ footer {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('https://cdn.res-menu.net/jennies-kitchen/albums-4.jpg') center/cover no-repeat;
-  opacity: 0.18;
+  background: url('images/entrance.jpg') center/cover no-repeat;
+  opacity: 0.25;
 }
 
 .page-hero .container {
@@ -1224,11 +1224,103 @@ footer {
 
 .menu-section-title h2 {
   font-size: 2rem;
-  color: var(--pink);
+  color: var(--on-surface);
 }
 
 .menu-section-icon {
-  font-size: 1.8rem;
+  width: 24px;
+  height: 24px;
+  stroke: var(--secondary);
+  stroke-width: 1.75;
+  flex-shrink: 0;
+}
+
+/* Menu sub-headings (Hot Drinks, Wine & Fizz etc) */
+.menu-sub-heading {
+  font-size: 0.72rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Jump nav */
+.menu-jump-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding: 1.25rem 1.75rem;
+  background: var(--surface-container-lowest);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.menu-jump-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-right: 0.25rem;
+  white-space: nowrap;
+}
+
+.menu-jump-chip {
+  display: inline-block;
+  padding: 0.3rem 0.9rem;
+  border-radius: var(--radius-full);
+  background: var(--surface-container-low);
+  color: var(--on-surface);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+.menu-jump-chip:hover {
+  background: var(--secondary);
+  color: var(--on-secondary);
+}
+
+/* Allergen notice */
+.allergen-notice {
+  background: var(--surface-container-lowest);
+  border-radius: var(--radius-xl);
+  padding: 1.75rem 2.25rem;
+  box-shadow: var(--shadow-sm);
+  margin-top: 1rem;
+}
+.allergen-notice h4 {
+  color: var(--on-surface);
+  margin-bottom: 0.75rem;
+}
+.allergen-notice p {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  margin-bottom: 0.4rem;
+}
+.allergen-notice p:last-child { margin-bottom: 0; }
+
+/* CTA banner */
+.menu-cta-banner {
+  background: var(--surface-container-low);
+  padding: 4rem 0;
+  text-align: center;
+  border-top: 1px solid var(--outline-variant);
+}
+.menu-cta-banner .section-eyebrow { margin-bottom: 0.5rem; }
+.menu-cta-banner h2 { margin-bottom: 0.75rem; color: var(--on-surface); }
+.menu-cta-banner p  { color: var(--text-light); font-size: 1rem; margin-bottom: 2rem; }
+.menu-cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .menu-table {

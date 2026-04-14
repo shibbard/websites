@@ -152,9 +152,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Work+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 </head>
 
 <body>
@@ -167,8 +168,7 @@
       <div class="header-inner">
 
         <a href="index.html" class="logo" aria-label="Jennie's Kitchen — Return to homepage">
-          <span class="logo-main">Jennie's Kitchen</span>
-          <span class="logo-sub">Ashton Keynes</span>
+          <img src="images/logo.png" alt="Jennie's Kitchen" class="logo-img">
         </a>
 
         <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav">
@@ -179,12 +179,12 @@
 
         <nav id="main-nav" aria-label="Main navigation">
           <ul>
+            <li><a href="menu.html" class="active">Menu</a></li>
             <li><a href="index.html#about">About</a></li>
             <li><a href="index.html#gallery">Gallery</a></li>
-            <li><a href="menu.html" class="active">Menu</a></li>
-            <li><a href="index.html#reviews">Reviews</a></li>
             <li><a href="index.html#location">Find Us</a></li>
           </ul>
+          <a href="tel:+441285860048" class="btn btn-primary nav-menu-btn">Book a Table</a>
         </nav>
 
       </div>
@@ -219,23 +219,23 @@
       <div class="container">
 
         <!-- Quick-jump nav -->
-        <nav aria-label="Jump to menu section" style="margin-bottom:3rem;background:var(--white);border-radius:var(--radius-lg);padding:1.5rem 2rem;box-shadow:0 4px 20px var(--shadow-sm);display:flex;flex-wrap:wrap;gap:0.75rem;align-items:center;">
-          <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-right:0.5rem;white-space:nowrap;">Jump to:</span>
-          <a href="#starters"     class="btn btn-outline-green" style="padding:0.4rem 1.1rem;font-size:0.75rem;">Starters</a>
-          <a href="#main-course"  class="btn btn-outline-green" style="padding:0.4rem 1.1rem;font-size:0.75rem;">Mains</a>
-          <a href="#desserts"     class="btn btn-outline-green" style="padding:0.4rem 1.1rem;font-size:0.75rem;">Desserts</a>
-          <a href="#breakfast"    class="btn btn-outline-green" style="padding:0.4rem 1.1rem;font-size:0.75rem;">Breakfast</a>
-          <a href="#lunch"        class="btn btn-outline-green" style="padding:0.4rem 1.1rem;font-size:0.75rem;">Lunch</a>
-          <a href="#drinks"       class="btn btn-outline-green" style="padding:0.4rem 1.1rem;font-size:0.75rem;">Drinks</a>
-          <a href="#alcohol"      class="btn btn-outline-green" style="padding:0.4rem 1.1rem;font-size:0.75rem;">Alcohol</a>
-          <a href="#others"       class="btn btn-outline-green" style="padding:0.4rem 1.1rem;font-size:0.75rem;">Extras</a>
+        <nav class="menu-jump-nav" aria-label="Jump to menu section">
+          <span class="menu-jump-label">Jump to:</span>
+          <a href="#starters"    class="menu-jump-chip">Starters</a>
+          <a href="#main-course" class="menu-jump-chip">Mains</a>
+          <a href="#desserts"    class="menu-jump-chip">Desserts</a>
+          <a href="#breakfast"   class="menu-jump-chip">Breakfast</a>
+          <a href="#lunch"       class="menu-jump-chip">Lunch</a>
+          <a href="#drinks"      class="menu-jump-chip">Drinks</a>
+          <a href="#alcohol"     class="menu-jump-chip">Alcohol</a>
+          <a href="#others"      class="menu-jump-chip">Extras</a>
         </nav>
 
 
         <!-- ==================== STARTERS ==================== -->
         <section class="menu-section" id="starters" aria-labelledby="starters-heading" itemprop="hasMenuSection" itemscope itemtype="https://schema.org/MenuSection">
           <div class="menu-section-title">
-            <span class="menu-section-icon" aria-hidden="true">🥗</span>
+            <i data-lucide="salad" class="menu-section-icon" aria-hidden="true"></i>
             <h2 id="starters-heading" itemprop="name">Starters</h2>
           </div>
           <div class="menu-table" role="list">
@@ -275,7 +275,7 @@
         <!-- ==================== MAIN COURSE ==================== -->
         <section class="menu-section" id="main-course" aria-labelledby="mains-heading" itemprop="hasMenuSection" itemscope itemtype="https://schema.org/MenuSection">
           <div class="menu-section-title">
-            <span class="menu-section-icon" aria-hidden="true">🍖</span>
+            <i data-lucide="utensils-crossed" class="menu-section-icon" aria-hidden="true"></i>
             <h2 id="mains-heading" itemprop="name">Main Course</h2>
           </div>
           <div class="menu-table" role="list">
@@ -302,7 +302,7 @@
         <!-- ==================== DESSERTS ==================== -->
         <section class="menu-section" id="desserts" aria-labelledby="desserts-heading" itemprop="hasMenuSection" itemscope itemtype="https://schema.org/MenuSection">
           <div class="menu-section-title">
-            <span class="menu-section-icon" aria-hidden="true">🍰</span>
+            <i data-lucide="cookie" class="menu-section-icon" aria-hidden="true"></i>
             <h2 id="desserts-heading" itemprop="name">Desserts &amp; Cakes</h2>
           </div>
           <div class="menu-table" role="list">
@@ -353,7 +353,7 @@
         <!-- ==================== BREAKFAST ==================== -->
         <section class="menu-section" id="breakfast" aria-labelledby="breakfast-heading" itemprop="hasMenuSection" itemscope itemtype="https://schema.org/MenuSection">
           <div class="menu-section-title">
-            <span class="menu-section-icon" aria-hidden="true">🍳</span>
+            <i data-lucide="sunrise" class="menu-section-icon" aria-hidden="true"></i>
             <h2 id="breakfast-heading" itemprop="name">Breakfast</h2>
           </div>
           <p style="font-size:0.88rem;color:var(--text-light);font-style:italic;margin-bottom:1.5rem;">
@@ -462,7 +462,7 @@
         <!-- ==================== LUNCH ==================== -->
         <section class="menu-section" id="lunch" aria-labelledby="lunch-heading" itemprop="hasMenuSection" itemscope itemtype="https://schema.org/MenuSection">
           <div class="menu-section-title">
-            <span class="menu-section-icon" aria-hidden="true">🥙</span>
+            <i data-lucide="utensils" class="menu-section-icon" aria-hidden="true"></i>
             <h2 id="lunch-heading" itemprop="name">Light Bites &amp; Lunch</h2>
           </div>
           <div class="menu-table" role="list">
@@ -557,11 +557,11 @@
         <!-- ==================== DRINKS ==================== -->
         <section class="menu-section" id="drinks" aria-labelledby="drinks-heading" itemprop="hasMenuSection" itemscope itemtype="https://schema.org/MenuSection">
           <div class="menu-section-title">
-            <span class="menu-section-icon" aria-hidden="true">☕</span>
+            <i data-lucide="coffee" class="menu-section-icon" aria-hidden="true"></i>
             <h2 id="drinks-heading" itemprop="name">Drinks</h2>
           </div>
 
-          <h3 style="font-size:1.1rem;color:var(--green-dark);margin-bottom:1.25rem;padding-bottom:0.5rem;border-bottom:1px solid var(--cream-dark);">Hot Drinks</h3>
+          <h3 class="menu-sub-heading">Hot Drinks</h3>
           <div class="menu-table" style="margin-bottom:2rem;" role="list">
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
@@ -596,7 +596,7 @@
 
           </div>
 
-          <h3 style="font-size:1.1rem;color:var(--green-dark);margin-bottom:1.25rem;padding-bottom:0.5rem;border-bottom:1px solid var(--cream-dark);">Cold Drinks &amp; Soft Drinks</h3>
+          <h3 class="menu-sub-heading">Cold Drinks &amp; Soft Drinks</h3>
           <div class="menu-table" role="list">
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
@@ -660,11 +660,11 @@
         <!-- ==================== ALCOHOL ==================== -->
         <section class="menu-section" id="alcohol" aria-labelledby="alcohol-heading" itemprop="hasMenuSection" itemscope itemtype="https://schema.org/MenuSection">
           <div class="menu-section-title">
-            <span class="menu-section-icon" aria-hidden="true">🍷</span>
+            <i data-lucide="wine" class="menu-section-icon" aria-hidden="true"></i>
             <h2 id="alcohol-heading" itemprop="name">Alcohol</h2>
           </div>
 
-          <h3 style="font-size:1.1rem;color:var(--green-dark);margin-bottom:1.25rem;padding-bottom:0.5rem;border-bottom:1px solid var(--cream-dark);">Wine &amp; Fizz</h3>
+          <h3 class="menu-sub-heading">Wine &amp; Fizz</h3>
           <div class="menu-table" style="margin-bottom:2rem;" role="list">
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
@@ -681,7 +681,7 @@
 
           </div>
 
-          <h3 style="font-size:1.1rem;color:var(--green-dark);margin-bottom:1.25rem;padding-bottom:0.5rem;border-bottom:1px solid var(--cream-dark);">Beer &amp; Cider</h3>
+          <h3 class="menu-sub-heading">Beer &amp; Cider</h3>
           <div class="menu-table" style="margin-bottom:2rem;" role="list">
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
@@ -721,7 +721,7 @@
 
           </div>
 
-          <h3 style="font-size:1.1rem;color:var(--green-dark);margin-bottom:1.25rem;padding-bottom:0.5rem;border-bottom:1px solid var(--cream-dark);">Spirits &amp; Cocktails</h3>
+          <h3 class="menu-sub-heading">Spirits &amp; Cocktails</h3>
           <div class="menu-table" role="list">
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
@@ -762,7 +762,7 @@
         <!-- ==================== EXTRAS / OTHERS ==================== -->
         <section class="menu-section" id="others" aria-labelledby="others-heading" itemprop="hasMenuSection" itemscope itemtype="https://schema.org/MenuSection">
           <div class="menu-section-title">
-            <span class="menu-section-icon" aria-hidden="true">➕</span>
+            <i data-lucide="plus-circle" class="menu-section-icon" aria-hidden="true"></i>
             <h2 id="others-heading" itemprop="name">Extras &amp; Additions</h2>
           </div>
           <div class="menu-table" role="list">
@@ -797,10 +797,10 @@
 
 
         <!-- Allergen notice -->
-        <div style="background:var(--white);border-radius:var(--radius-lg);padding:2rem 2.5rem;box-shadow:0 4px 20px var(--shadow-sm);margin-top:1rem;border-left:4px solid var(--gold);">
-          <h4 style="color:var(--green-dark);margin-bottom:0.75rem;">Allergen &amp; Dietary Information</h4>
-          <p style="font-size:0.88rem;color:var(--text-light);margin-bottom:0.5rem;">If you have a food allergy or intolerance, please speak to a member of staff before ordering. We handle a variety of allergens in our kitchen including gluten, dairy, eggs, nuts and fish.</p>
-          <p style="font-size:0.88rem;color:var(--text-light);margin-bottom:0;">(v) Vegetarian &nbsp;|&nbsp; (vg) Vegan &nbsp;|&nbsp; (gf) Gluten Free option available. Menu items and prices are subject to change — please check with us for the very latest menu.</p>
+        <div class="allergen-notice">
+          <h4>Allergen &amp; Dietary Information</h4>
+          <p>If you have a food allergy or intolerance, please speak to a member of staff before ordering. We handle a variety of allergens in our kitchen including gluten, dairy, eggs, nuts and fish.</p>
+          <p>(v) Vegetarian &nbsp;·&nbsp; (vg) Vegan &nbsp;·&nbsp; (gf) Gluten Free option available. Menu items and prices are subject to change — please check with us for the very latest.</p>
         </div>
 
       </div>
@@ -812,17 +812,21 @@
   <!-- =============================================
        CTA BANNER
        ============================================= -->
-  <div style="background:var(--green-dark);padding:4rem 0;text-align:center;">
+  <section class="menu-cta-banner">
     <div class="container">
-      <span class="section-eyebrow" style="color:var(--gold-light);">Come and visit us</span>
-      <h2 style="color:var(--white);margin-bottom:1.2rem;font-size:2.2rem;">Ready for Something Delicious?</h2>
-      <p style="color:rgba(255,255,255,0.75);font-size:1.05rem;margin-bottom:2rem;">Find us on Fridays Ham Lane, Ashton Keynes, Swindon SN6 6QP</p>
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href="tel:+441285860048" class="btn btn-gold">📞 Call: 01285 860048</a>
-        <a href="index.html#location" class="btn btn-outline-white">📍 Get Directions</a>
+      <span class="section-eyebrow">Come and visit us</span>
+      <h2>Ready for Something Delicious?</h2>
+      <p>Find us on Fridays Ham Lane, Ashton Keynes, Swindon SN6 6QP</p>
+      <div class="menu-cta-buttons">
+        <a href="tel:+441285860048" class="btn btn-primary">
+          <i data-lucide="phone" style="width:16px;height:16px;"></i> Call: 01285 860048
+        </a>
+        <a href="index.html#location" class="btn btn-outline-green">
+          <i data-lucide="map-pin" style="width:16px;height:16px;"></i> Get Directions
+        </a>
       </div>
     </div>
-  </div>
+  </section>
 
 
   <!-- =============================================
@@ -830,55 +834,37 @@
        ============================================= -->
   <footer role="contentinfo">
     <div class="container">
-
-      <div class="footer-grid">
-
-        <div class="footer-brand">
-          <a href="index.html" class="logo" aria-label="Jennie's Kitchen home">
-            <span class="logo-main">Jennie's Kitchen</span>
-            <span class="logo-sub">Ashton Keynes, Wiltshire</span>
+      <div class="footer-top">
+        <a href="index.html" class="footer-wordmark" aria-label="Jennie's Kitchen home">Jennie's Kitchen</a>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/p/Jennies-Kitchen-Cafe-61582087446355/" target="_blank" rel="noopener" aria-label="Facebook">
+            <i data-lucide="facebook"></i>
           </a>
-          <p class="footer-desc">A charming homemade café nestled in the heart of Ashton Keynes village. Where friendly service meets freshly cooked food, every single day.</p>
-          <div class="footer-contact">
-            <a href="tel:+441285860048">📞 01285 860048</a>
-            <span>📍 Fridays Ham Lane, Ashton Keynes, SN6 6QP</span>
-          </div>
+          <a href="https://www.instagram.com/jennieskitchencafe" target="_blank" rel="noopener" aria-label="Instagram">
+            <i data-lucide="instagram"></i>
+          </a>
         </div>
-
-        <div>
-          <p class="footer-col-title">Navigate</p>
-          <ul class="footer-links">
-            <li><a href="index.html#about">About Us</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="index.html#gallery">Gallery</a></li>
-            <li><a href="index.html#reviews">Reviews</a></li>
-            <li><a href="index.html#location">Find Us</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <p class="footer-col-title">The Menu</p>
-          <ul class="footer-links">
-            <li><a href="#breakfast">Breakfast</a></li>
-            <li><a href="#lunch">Light Bites &amp; Lunch</a></li>
-            <li><a href="#desserts">Cakes &amp; Desserts</a></li>
-            <li><a href="#drinks">Drinks</a></li>
-            <li><a href="#alcohol">Alcohol</a></li>
-          </ul>
-        </div>
-
       </div>
-
       <div class="footer-bottom">
-        <span>&copy; 2026 Jennie's Kitchen, Ashton Keynes. All rights reserved.</span>
-        <span>Fridays Ham Lane, Ashton Keynes, Swindon SN6 6QP &nbsp;|&nbsp; <a href="tel:+441285860048" style="color:inherit">01285 860048</a></span>
+        <span class="footer-copy">&copy; 2026 Jennie's Kitchen. Crafted with care in the countryside.</span>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="index.html#about">About</a>
+          <a href="menu.html">Menu</a>
+          <a href="index.html#gallery">Gallery</a>
+          <a href="index.html#location">Find Us</a>
+          <a href="https://www.getdigitaldone.co.uk" target="_blank" rel="noopener">Get Digital Done</a>
+        </nav>
       </div>
-
     </div>
   </footer>
 
 
   <script>
+    /* Lucide icons */
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    });
+
     /* Sticky header */
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
