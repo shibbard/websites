@@ -1203,27 +1203,33 @@ footer {
    ============================================================ */
 .menu-page {
   background: var(--surface-container-low);
-  padding: 2.5rem 0;
+  padding: 2.5rem 0 4rem;
 }
 
 .menu-page .menu-section {
   padding: 0;
 }
 
+/* Each section is a grounded white card */
 .menu-section {
-  margin-bottom: 2rem;
+  background: var(--surface-container-lowest);
+  border-radius: var(--radius-xl);
+  padding: 2rem 2.25rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.5rem;
 }
 
 .menu-section-title {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.75rem;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
   padding-bottom: 1rem;
+  border-bottom: 1px solid var(--outline-variant);
 }
 
 .menu-section-title h2 {
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: var(--on-surface);
 }
 
@@ -1326,7 +1332,11 @@ footer {
 .menu-table {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.5rem 3rem;
+  gap: 0 3rem;
+}
+
+.menu-table--spaced {
+  margin-bottom: 1.5rem;
 }
 
 .menu-row {
@@ -1334,8 +1344,9 @@ footer {
   justify-content: space-between;
   align-items: baseline;
   gap: 0.75rem;
-  padding: 0.55rem 0;
-  font-size: 0.95rem;
+  padding: 0.6rem 0;
+  font-size: 0.92rem;
+  border-bottom: 1px solid var(--outline-variant);
 }
 
 .menu-row:last-child {
@@ -1363,11 +1374,10 @@ footer {
   font-size: 0.85rem;
   color: var(--text-light);
   font-style: italic;
-  margin-top: 0.75rem;
-  padding: 0.9rem 1.25rem;
-  background: var(--surface-container-lowest);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-sm);
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--surface-container-low);
+  border-radius: var(--radius);
 }
 
 .diet-labels {
@@ -1394,17 +1404,17 @@ footer {
 .diet-label.gf { background: #fff8e1; border-color: #ffecb3; color: #f57f17; }
 
 .menu-extras-note {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: 1.5rem 2rem;
+  background: var(--surface-container-low);
+  border-radius: var(--radius);
+  padding: 0.9rem 1.1rem;
   margin-top: 1rem;
-  box-shadow: 0 4px 20px var(--shadow-sm);
 }
 
 .menu-extras-note p {
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   color: var(--text-light);
-  margin-bottom: 0.4rem;
+  font-style: italic;
+  margin-bottom: 0.3rem;
 }
 
 .menu-extras-note p:last-child { margin-bottom: 0; }
