@@ -5,35 +5,63 @@
 
 /* Custom Properties */
 :root {
-  /* Brand pink — from Jennie's Kitchen logo */
-  --pink:          #D4167E;
-  --pink-light:    #E91E8C;
-  --pink-pale:     #fce8f3;
+  /* ── Design Guide: The Pastoral Editor ───────────────── */
 
-  /* Keep greens for dark backgrounds only (footer, reviews) */
-  --green-dark:    #2E5D29;
-  --green-mid:     #3D7237;
-  --green-light:   #5A9452;
+  /* Primary (deep forest — for dark backgrounds only) */
+  --primary:                 #182811;
+  --primary-container:       #2d3e25;
+  --green-dark:              #182811;   /* alias */
+  --green-mid:               #2d3e25;   /* alias */
 
-  --gold:          #C08A28;
-  --gold-light:    #E8B84B;
-  --cream:         #FAF8F4;
-  --cream-mid:     #F2EDE2;
-  --cream-dark:    #E8E0D0;
-  --white:         #FFFFFF;
-  --dark:          #1C2B1A;
-  --text:          #323D2F;
-  --text-light:    #637060;
-  --border:        #DDD8CC;
-  --shadow-sm:     rgba(28, 43, 26, 0.07);
-  --shadow-md:     rgba(28, 43, 26, 0.13);
-  --shadow-lg:     rgba(28, 43, 26, 0.22);
-  --radius:        10px;
-  --radius-lg:     18px;
-  --radius-xl:     28px;
+  /* Secondary (brand pink — all interactive elements) */
+  --secondary:               #b50062;
+  --secondary-hover:         #e2007c;
+  --pink:                    #b50062;   /* alias */
+  --pink-light:              #e2007c;   /* alias */
+  --pink-pale:               #fce6f2;   /* alias */
+
+  /* Surface hierarchy (botanical, sun-drenched) */
+  --surface:                 #edffdf;
+  --surface-low:             #f4fff0;
+  --surface-container-low:   #e4f5d4;
+  --surface-container:       #d4e9c5;
+  --surface-container-high:  #c8ddb8;
+  --surface-container-highest: #d4e9c5;
+  --surface-container-lowest: #ffffff;
+
+  /* Legacy cream aliases → mapped to new surface tokens */
+  --cream:                   #f4fff0;
+  --cream-mid:               #e4f5d4;
+  --cream-dark:              #c8ddb8;
+
+  /* Text */
+  --on-surface:              #101f09;
+  --on-secondary:            #ffffff;
+  --text:                    #101f09;
+  --text-light:              #3d5a30;
+  --white:                   #ffffff;
+  --dark:                    #182811;
+
+  /* Gold (prices, accents) */
+  --gold:                    #C08A28;
+  --gold-light:              #E8B84B;
+
+  /* Outline — felt not seen */
+  --outline-variant:         rgba(16, 31, 9, 0.15);
+  --border:                  rgba(16, 31, 9, 0.15);
+
+  /* Ambient shadows (tinted, ultra-diffuse) */
+  --shadow-sm:               0 20px 40px rgba(16, 31, 9, 0.06);
+  --shadow-md:               0 20px 40px rgba(16, 31, 9, 0.08);
+  --shadow-lg:               0 20px 40px rgba(16, 31, 9, 0.12);
+  /* Roundedness scale (Design Guide §7) */
+  --radius:        0.5rem;    /* lg  — smaller cards */
+  --radius-lg:     0.5rem;    /* lg  — alias */
+  --radius-xl:     0.75rem;   /* xl  — containers, buttons */
+  --radius-full:   9999px;    /* full — pills, chips */
   --transition:    0.3s ease;
-  --font-heading:  'Cormorant Garamond', 'Georgia', serif;
-  --font-body:     'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading:  'Newsreader', 'Georgia', serif;
+  --font-body:     'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --max-width:     1200px;
 }
 
@@ -54,9 +82,9 @@ html {
 body {
   font-family: var(--font-body);
   font-size: 1rem;
-  line-height: 1.75;
-  color: var(--text);
-  background-color: var(--cream);
+  line-height: 1.6;
+  color: var(--on-surface);
+  background-color: var(--surface);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -85,7 +113,7 @@ h1, h2, h3, h4 {
   color: var(--dark);
 }
 
-h1 { font-size: clamp(2.6rem, 5.5vw, 4.2rem); }
+h1 { font-size: clamp(2.6rem, 5.5vw, 4.2rem); letter-spacing: -0.02em; }
 h2 { font-size: clamp(2rem, 4vw, 3rem); }
 h3 { font-size: clamp(1.4rem, 2.5vw, 1.9rem); }
 h4 { font-size: 1.15rem; font-family: var(--font-body); font-weight: 700; }
@@ -138,7 +166,7 @@ section {
   justify-content: center;
   gap: 0.5rem;
   padding: 0.9rem 2.2rem;
-  border-radius: 50px;
+  border-radius: var(--radius-xl);
   font-family: var(--font-body);
   font-size: 0.82rem;
   font-weight: 700;
@@ -157,10 +185,10 @@ section {
   border-color: var(--pink);
 }
 .btn-primary:hover {
-  background: var(--pink-light);
-  border-color: var(--pink-light);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(212, 22, 126, 0.35);
+  background: var(--secondary-hover);
+  border-color: var(--secondary-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(181, 0, 98, 0.30);
 }
 
 .btn-outline-white {
@@ -209,8 +237,10 @@ section {
 }
 
 #header.scrolled {
-  background: var(--white);
-  box-shadow: 0 2px 24px var(--shadow-md);
+  background: rgba(237, 255, 223, 0.80);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-sm);
   padding: 0.7rem 0;
 }
 
@@ -274,7 +304,7 @@ section {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.9);
-  border-radius: 50px;
+  border-radius: var(--radius-full);
   transition: all var(--transition);
 }
 
@@ -302,7 +332,7 @@ section {
   background: var(--pink);
   color: var(--white);
   padding: 0.55rem 1.4rem;
-  border-radius: 50px;
+  border-radius: var(--radius-full);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -503,7 +533,7 @@ section {
    ABOUT
    ============================================================ */
 #about {
-  background: var(--white);
+  background: var(--surface-low);
 }
 
 .about-grid {
@@ -520,23 +550,23 @@ section {
 .about-image-wrap::before {
   content: '';
   position: absolute;
-  top: -1.2rem;
-  left: -1.2rem;
-  right: 1.2rem;
-  bottom: 1.2rem;
-  border: 3px solid var(--gold);
-  border-radius: var(--radius-lg);
+  top: 24px;
+  left: 24px;
+  right: -24px;
+  bottom: -24px;
+  background: var(--surface-container-high);
+  border-radius: var(--radius-xl);
   z-index: 0;
 }
 
 .about-image-wrap img {
   position: relative;
   z-index: 1;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   width: 100%;
   height: 560px;
   object-fit: cover;
-  box-shadow: 0 24px 64px var(--shadow-md);
+  box-shadow: var(--shadow-lg);
 }
 
 .about-content h2 {
@@ -556,10 +586,9 @@ section {
 }
 
 .highlight {
-  background: var(--cream);
-  border-radius: var(--radius);
+  background: var(--surface-container-low);
+  border-radius: var(--radius-xl);
   padding: 1.1rem 1.3rem;
-  border-left: 3px solid var(--gold);
 }
 
 .highlight strong {
@@ -579,7 +608,7 @@ section {
    MENU PREVIEW
    ============================================================ */
 #menu-preview {
-  background: var(--cream);
+  background: var(--surface-container-low);
 }
 
 .menu-grid {
@@ -590,10 +619,10 @@ section {
 }
 
 .menu-card {
-  background: var(--white);
-  border-radius: var(--radius-lg);
+  background: var(--surface-container-lowest);
+  border-radius: var(--radius-xl);
   padding: 2rem 2.2rem;
-  box-shadow: 0 4px 24px var(--shadow-sm);
+  box-shadow: var(--shadow-sm);
   transition: box-shadow var(--transition), transform var(--transition);
 }
 
@@ -607,8 +636,7 @@ section {
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 1.4rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid var(--cream-dark);
+  padding-bottom: 0;
 }
 
 .menu-card-icon {
@@ -624,7 +652,7 @@ section {
 .menu-items {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 0.15rem;
 }
 
 .menu-item {
@@ -632,8 +660,7 @@ section {
   justify-content: space-between;
   align-items: baseline;
   gap: 0.75rem;
-  padding: 0.6rem 0;
-  border-bottom: 1px dotted var(--border);
+  padding: 0.55rem 0;
   font-size: 0.95rem;
 }
 
@@ -801,7 +828,7 @@ section {
    LOCATION
    ============================================================ */
 #location {
-  background: var(--white);
+  background: var(--surface);
 }
 
 .location-grid {
@@ -831,14 +858,13 @@ section {
 .contact-icon {
   width: 46px;
   height: 46px;
-  background: var(--cream);
+  background: var(--surface-container);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.15rem;
   flex-shrink: 0;
-  border: 1px solid var(--cream-dark);
 }
 
 .contact-details {
@@ -882,10 +908,9 @@ section {
   color: var(--text-light);
   font-style: italic;
   line-height: 1.6;
-  background: var(--cream);
+  background: var(--surface-container-low);
   padding: 1rem 1.25rem;
-  border-radius: var(--radius);
-  border-left: 3px solid var(--gold);
+  border-radius: var(--radius-xl);
 }
 
 /* Info badges */
@@ -902,13 +927,12 @@ section {
 }
 
 .badge {
-  background: var(--cream);
-  border: 1px solid var(--cream-dark);
-  border-radius: 50px;
+  background: var(--surface-container);
+  border-radius: var(--radius-full);
   padding: 0.35rem 1rem;
   font-size: 0.78rem;
   font-weight: 700;
-  color: var(--text);
+  color: var(--on-surface);
   white-space: nowrap;
 }
 
@@ -1071,7 +1095,7 @@ footer {
    MENU PAGE
    ============================================================ */
 .menu-page {
-  background: var(--cream);
+  background: var(--surface-container-low);
   padding: 2.5rem 0;
 }
 
@@ -1089,7 +1113,6 @@ footer {
   gap: 1rem;
   margin-bottom: 1.75rem;
   padding-bottom: 1rem;
-  border-bottom: 2px solid var(--cream-dark);
 }
 
 .menu-section-title h2 {
@@ -1112,8 +1135,7 @@ footer {
   justify-content: space-between;
   align-items: baseline;
   gap: 0.75rem;
-  padding: 0.65rem 0;
-  border-bottom: 1px dotted var(--border);
+  padding: 0.55rem 0;
   font-size: 0.95rem;
 }
 
@@ -1144,9 +1166,9 @@ footer {
   font-style: italic;
   margin-top: 0.75rem;
   padding: 0.9rem 1.25rem;
-  background: var(--white);
-  border-radius: var(--radius);
-  border-left: 3px solid var(--gold);
+  background: var(--surface-container-lowest);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
 }
 
 .diet-labels {
