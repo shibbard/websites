@@ -5,9 +5,16 @@
 
 /* Custom Properties */
 :root {
+  /* Brand pink — from Jennie's Kitchen logo */
+  --pink:          #D4167E;
+  --pink-light:    #E91E8C;
+  --pink-pale:     #fce8f3;
+
+  /* Keep greens for dark backgrounds only (footer, reviews) */
   --green-dark:    #2E5D29;
   --green-mid:     #3D7237;
   --green-light:   #5A9452;
+
   --gold:          #C08A28;
   --gold-light:    #E8B84B;
   --cream:         #FAF8F4;
@@ -92,7 +99,7 @@ p:last-child { margin-bottom: 0; }
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--pink);
   margin-bottom: 0.6rem;
 }
 
@@ -145,15 +152,15 @@ section {
 }
 
 .btn-primary {
-  background: var(--green-dark);
+  background: var(--pink);
   color: var(--white);
-  border-color: var(--green-dark);
+  border-color: var(--pink);
 }
 .btn-primary:hover {
-  background: var(--green-mid);
-  border-color: var(--green-mid);
+  background: var(--pink-light);
+  border-color: var(--pink-light);
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(46, 93, 41, 0.35);
+  box-shadow: 0 10px 28px rgba(212, 22, 126, 0.35);
 }
 
 .btn-outline-white {
@@ -180,11 +187,11 @@ section {
 
 .btn-outline-green {
   background: transparent;
-  color: var(--green-dark);
-  border-color: var(--green-dark);
+  color: var(--pink);
+  border-color: var(--pink);
 }
 .btn-outline-green:hover {
-  background: var(--green-dark);
+  background: var(--pink);
   color: var(--white);
 }
 
@@ -249,8 +256,8 @@ section {
   transition: color var(--transition);
 }
 
-#header.scrolled .logo-main { color: var(--green-dark); }
-#header.scrolled .logo-sub  { color: var(--gold); }
+#header.scrolled .logo-main { color: var(--pink); }
+#header.scrolled .logo-sub  { color: var(--pink); }
 
 /* Nav links */
 #main-nav ul {
@@ -287,12 +294,12 @@ section {
 
 #header.scrolled #main-nav a:hover,
 #header.scrolled #main-nav a.active {
-  color: var(--green-dark);
-  background: var(--cream-mid);
+  color: var(--pink);
+  background: var(--pink-pale);
 }
 
 #header.scrolled .nav-menu-btn {
-  background: var(--green-dark);
+  background: var(--pink);
   color: var(--white);
   padding: 0.55rem 1.4rem;
   border-radius: 50px;
@@ -455,7 +462,7 @@ section {
    FEATURES BAR
    ============================================================ */
 .features-bar {
-  background: var(--green-dark);
+  background: var(--pink);
   padding: 1.75rem 0;
 }
 
@@ -559,7 +566,7 @@ section {
   display: block;
   font-family: var(--font-heading);
   font-size: 1.1rem;
-  color: var(--green-dark);
+  color: var(--pink);
   margin-bottom: 0.2rem;
 }
 
@@ -611,7 +618,7 @@ section {
 
 .menu-card-header h3 {
   font-size: 1.5rem;
-  color: var(--green-dark);
+  color: var(--pink);
 }
 
 .menu-items {
@@ -855,7 +862,7 @@ section {
 }
 
 .contact-value a:hover {
-  color: var(--green-dark);
+  color: var(--pink);
   text-decoration: underline;
 }
 
@@ -865,7 +872,7 @@ section {
 }
 
 .hours-section h4 {
-  color: var(--green-dark);
+  color: var(--pink);
   margin-bottom: 1rem;
   font-size: 1rem;
 }
@@ -883,7 +890,7 @@ section {
 
 /* Info badges */
 .info-section h4 {
-  color: var(--green-dark);
+  color: var(--pink);
   margin-bottom: 1rem;
   font-size: 1rem;
 }
@@ -1087,7 +1094,7 @@ footer {
 
 .menu-section-title h2 {
   font-size: 2rem;
-  color: var(--green-dark);
+  color: var(--pink);
 }
 
 .menu-section-icon {
@@ -1158,7 +1165,7 @@ footer {
   font-weight: 700;
   letter-spacing: 0.05em;
   padding: 0.15rem 0.45rem;
-  color: var(--green-dark);
+  color: var(--pink);
 }
 
 .diet-label.vegan { background: #e8f5e9; border-color: #c8e6c9; color: #2e7d32; }
