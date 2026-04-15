@@ -234,11 +234,13 @@ section {
   right: 0;
   z-index: 999;
   padding: 1.1rem 0;
+  background: #ffffff;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.08);
   transition: background var(--transition), padding var(--transition), box-shadow var(--transition);
 }
 
 #header.scrolled {
-  background: rgba(237, 255, 223, 0.80);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: var(--shadow-sm);
@@ -310,23 +312,19 @@ section {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--primary-container);
   border-radius: var(--radius-full);
   transition: all var(--transition);
 }
 
-#main-nav a:hover {
-  color: var(--white);
-  background: rgba(255, 255, 255, 0.15);
-}
-
-#main-nav a.active {
-  color: var(--white);
-  background: rgba(255, 255, 255, 0.18);
+#main-nav a:not(.nav-menu-btn):hover,
+#main-nav a:not(.nav-menu-btn).active {
+  color: var(--secondary);
+  background: var(--pink-pale);
 }
 
 #header.scrolled #main-nav a {
-  color: var(--primary-container);   /* #2d3e25 — readable mid-forest green */
+  color: var(--primary-container);
   font-weight: 700;
 }
 
@@ -387,7 +385,7 @@ section {
   display: block;
   width: 22px;
   height: 2px;
-  background: var(--white);
+  background: var(--dark);
   border-radius: 2px;
   transition: all var(--transition);
   transform-origin: center;
@@ -1539,9 +1537,6 @@ footer {
     color: var(--gold-light) !important;
   }
 
-  #header.scrolled #main-nav a {
-    color: var(--white) !important;
-  }
 
   .hero-content h1 { font-size: 2.4rem; }
   .hero-tagline { font-size: 0.95rem; }
