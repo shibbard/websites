@@ -61,6 +61,7 @@
   }
   </script>
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -1222,7 +1223,7 @@
     <div class="about-inner">
       <div class="about-img-wrap fade-up">
         <img
-          src="https://srgcatering.co.uk/wp-content/uploads/2020/11/web-photos-1.jpg"
+          src="images/steve.jpg"
           alt="Steve Raines-Gardiner, founder of SRG Catering"
           class="about-img"
           loading="lazy"
@@ -1274,19 +1275,29 @@
     </div>
     <div class="gallery-grid fade-up" style="transition-delay:0.1s">
       <div class="gallery-item">
-        <img src="https://srgcatering.co.uk/wp-content/uploads/2020/10/120765413_444945546876484_5329340306870184519_n.jpg" alt="SRG Catering food spread" loading="lazy">
+        <a href="images/gallery-1.jpg" class="glightbox" data-gallery="srg" data-glightbox="description: SRG Catering food spread">
+          <img src="images/gallery-1.jpg" alt="SRG Catering food spread" loading="lazy">
+        </a>
       </div>
       <div class="gallery-item">
-        <img src="https://srgcatering.co.uk/wp-content/uploads/2020/10/5-240x300.jpg" alt="Plated dish by SRG Catering" loading="lazy">
+        <a href="images/gallery-2.jpg" class="glightbox" data-gallery="srg" data-glightbox="description: Plated dish by SRG Catering">
+          <img src="images/gallery-2.jpg" alt="Plated dish by SRG Catering" loading="lazy">
+        </a>
       </div>
       <div class="gallery-item">
-        <img src="https://srgcatering.co.uk/wp-content/uploads/2020/10/4-240x300.jpg" alt="Catering presentation" loading="lazy">
+        <a href="images/gallery-3.jpg" class="glightbox" data-gallery="srg" data-glightbox="description: Catering presentation">
+          <img src="images/gallery-3.jpg" alt="Catering presentation" loading="lazy">
+        </a>
       </div>
       <div class="gallery-item">
-        <img src="https://srgcatering.co.uk/wp-content/uploads/2020/10/3-300x300.jpg" alt="Dessert by SRG Catering" loading="lazy">
+        <a href="images/gallery-4.jpg" class="glightbox" data-gallery="srg" data-glightbox="description: Dessert by SRG Catering">
+          <img src="images/gallery-4.jpg" alt="Dessert by SRG Catering" loading="lazy">
+        </a>
       </div>
       <div class="gallery-item">
-        <img src="https://srgcatering.co.uk/wp-content/uploads/2020/10/1-223x300.jpg" alt="SRG Catering private dining" loading="lazy">
+        <a href="images/gallery-5.jpg" class="glightbox" data-gallery="srg" data-glightbox="description: SRG Catering private dining">
+          <img src="images/gallery-5.jpg" alt="SRG Catering private dining" loading="lazy">
+        </a>
       </div>
     </div>
   </div>
@@ -1298,13 +1309,13 @@
     <div class="boxes-inner">
       <div class="boxes-img-grid fade-up">
         <div class="img-wrap">
-          <img src="https://srgcatering.co.uk/wp-content/uploads/2020/10/split-225x300.jpg" alt="SRG Catering afternoon tea" loading="lazy">
+          <img src="images/tea-1.jpg" alt="SRG Catering afternoon tea" loading="lazy">
         </div>
         <div class="img-wrap">
-          <img src="https://srgcatering.co.uk/wp-content/uploads/2020/10/2.jpg" alt="SRG afternoon tea box contents" loading="lazy">
+          <img src="images/tea-2.jpg" alt="SRG afternoon tea box contents" loading="lazy">
         </div>
         <div class="img-wrap">
-          <img src="https://srgcatering.co.uk/wp-content/uploads/2020/10/3.jpg" alt="Homemade cakes and scones" loading="lazy">
+          <img src="images/tea-3.jpg" alt="Homemade cakes and scones" loading="lazy">
         </div>
       </div>
       <div class="boxes-content fade-up" style="transition-delay:0.15s">
@@ -1553,7 +1564,7 @@
     </div>
   </div>
   <hr class="footer-divider">
-  <p class="footer-copy">© 2025 SRG Catering. Culinary Excellence Refined. VAT No. 400333365</p>
+  <p class="footer-copy">© 2025 SRG Catering. Culinary Excellence Refined. VAT No. 400333365 &nbsp;·&nbsp; <a href="https://getdigitaldone.co.uk" target="_blank" rel="noopener" style="color:inherit;opacity:0.6;">Site by Get Digital Done</a></p>
 </footer>
 
 <!-- ── BACK TO TOP ── -->
@@ -1561,6 +1572,7 @@
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
 </button>
 
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 <script>
   // ── NAV scroll
   const nav = document.getElementById('site-nav');
@@ -1574,6 +1586,9 @@
   const mob = document.getElementById('mobile-menu');
   ham.addEventListener('click', () => mob.classList.toggle('open'));
   function closeMobile() { mob.classList.remove('open'); }
+
+  // ── GLightbox
+  const lightbox = GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true });
 
   // ── Fade-up IntersectionObserver
   const observer = new IntersectionObserver((entries) => {
