@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://whaddongarage.getdigitaldone.co.uk/sitemap.xml
