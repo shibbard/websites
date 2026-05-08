@@ -38,9 +38,9 @@
   --font-body:            'Public Sans', 'Trebuchet MS', sans-serif;
 
   /* Spacing scale */
-  --space-xl:  8rem;
-  --space-2xl: 10rem;
-  --space-3xl: 12rem;
+  --space-xl:  5rem;
+  --space-2xl: 7rem;
+  --space-3xl: 9rem;
 
   /* Elevation — ambient only */
   --shadow-card:   0 2px 40px rgba(25,28,30,.04);
@@ -1121,7 +1121,7 @@ ul { list-style: none; }
 }
 
 @media (max-width: 600px) {
-  :root { --space-xl: 5rem; }
+  :root { --space-xl: 3rem; }
   .service-cards { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .hero-stats { gap: 1.5rem; }
