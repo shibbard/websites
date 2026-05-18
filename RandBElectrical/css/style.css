@@ -227,19 +227,13 @@ nav ul li a.cta-nav:hover { background: var(--primary-container); color: var(--o
 
 /* ── HERO ── */
 .hero {
-  background: var(--primary);
+  background:
+    linear-gradient(105deg, rgba(0,37,77,0.92) 0%, rgba(0,37,77,0.78) 55%, rgba(23,94,173,0.55) 100%),
+    url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1600&q=80&auto=format&fit=crop') center/cover no-repeat;
   color: var(--on-primary);
-  padding: 80px 0 72px;
+  padding: 88px 0 80px;
   position: relative;
   overflow: hidden;
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  right: 0; top: 0; bottom: 0;
-  width: 40%;
-  background: linear-gradient(135deg, transparent, rgba(23,94,173,0.25));
-  pointer-events: none;
 }
 /* Safety-yellow accent stripe */
 .hero::after {
