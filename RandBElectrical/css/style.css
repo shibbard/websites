@@ -630,12 +630,13 @@ nav ul li a.cta-nav:hover { background: var(--primary-container); color: var(--o
 .case-card:hover { border-color: var(--primary-container); box-shadow: var(--shadow-hover); }
 .case-placeholder {
   aspect-ratio: 16/9;
-  background: var(--surface-container);
+  background: var(--surface-container) center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--outline-variant);
 }
+.case-placeholder.has-image i { display: none; }
 .case-body { padding: 22px; }
 .case-body h3 { font-size: 16px; font-weight: 700; color: var(--primary); margin: 10px 0 6px; }
 .case-body p { font-size: 14px; color: var(--on-surface-variant); line-height: 20px; }
